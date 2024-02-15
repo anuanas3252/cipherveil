@@ -56,4 +56,35 @@ I submitted three project ideas to the guide for approval, and the guide approve
 - Imported config module from decouple to use the database credentials from the .env file
 - added 'frontlineapp' to installed app section
 
+<br><br>
+
+## 📅 15 FEB 2024
+
+- created a urls.py file for frontlineapp
+- created a 'templates/frontlineapp' directory to store templates in frontilineapp
+
 <br>
+
+**urls.py file :**
+- changes made
+    1.  added url pattern for frontlineapp
+
+<br>
+
+**templates :**
+- newly added
+    1. base.html
+    2. index.html
+
+<br>
+
+
+**views.py in frontlineapp :**
+- newly added
+    1.  index view
+
+<br>
+
+**urls.py in frontlineapp :**
+- newly added URL patterns
+    1.  index

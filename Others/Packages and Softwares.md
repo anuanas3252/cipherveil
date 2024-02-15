@@ -41,3 +41,9 @@ to store sensitive information like database credentials in environment variable
 
 ## psycopg-binary 3.1.18 & psycopg-3.1.18
  Psycopg-binary 3 is a modern implementation of a PostgreSQL adapter for Python.
+
+<br>
+
+## stegano-0.11.3
+
+used to encrypt and decrypt an image

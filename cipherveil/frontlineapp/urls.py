@@ -17,6 +17,8 @@ Including another URLconf
 
 from django.urls import path
 
+from frontlineapp import views
+
 urlpatterns = [
-    ,
+    path("", views.index, name="index"),
 ]

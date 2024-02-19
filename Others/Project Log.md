@@ -88,3 +88,30 @@ I submitted three project ideas to the guide for approval, and the guide approve
 **urls.py in frontlineapp :**
 - newly added URL patterns
     1.  index
+
+
+<br><br>
+
+## 📅 19 FEB 2024
+
+
+**templates :**
+- newly added
+    1. home.html
+    2. signin.html
+
+<br>
+
+**urls.py in frontlineapp :**
+- newly added URL patterns
+    1.  home
+    2.  signin
+    3.  signout
+
+
+
+**views.py in frontlineapp :**
+- newly added
+    1.  signout view
+    2.  signin view
+    3.  home view

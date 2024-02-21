@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'frontlineapp',
-    'contact',
+    'contactapp',
+    'steganoapp',
 ]
 
 MIDDLEWARE = [

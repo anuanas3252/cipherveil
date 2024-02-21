@@ -47,3 +47,8 @@ to store sensitive information like database credentials in environment variable
 ## stegano-0.11.3
 
 used to encrypt and decrypt an image
+
+<br>
+
+## pillow 10.2.0
+used to handle images

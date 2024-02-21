@@ -115,3 +115,16 @@ I submitted three project ideas to the guide for approval, and the guide approve
     1.  signout view
     2.  signin view
     3.  home view
+
+<br><br>
+
+## 📅 21 FEB 2024
+
+- created a 2 new apps named 'contactapp' and 'steganoapp'
+
+<br>
+
+**Changes made in settings.py file :**
+    
+- added 'contactapp' to installed app section
+- added 'steganoapp' to installed app section

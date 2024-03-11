@@ -128,3 +128,43 @@ I submitted three project ideas to the guide for approval, and the guide approve
     
 - added 'contactapp' to installed app section
 - added 'steganoapp' to installed app section
+
+<br><br>
+
+## 📅 3 MAR 2024
+
+- created a urls.py in steganoapp
+- created a directory '/templates/steganoapp' for steganoapp
+
+<br>
+
+**Changes made in settings.py file :**
+- Added the code for MEDIA ROOT
+
+<br>
+
+
+
+**urls.py file :**
+- changes made
+    1.  added url pattern for steganoapp
+
+<br>
+
+**Changes made in urls.py file :**
+- newly added URL patterns
+    1.  encrypt
+    2.  decrypt
+    3.  downloading image
+
+
+**Changes made in views.py file :**
+- newly added function request
+    1.  encrypt
+    2.  decrypt
+    3.  downloading image
+
+**templates in steganoapp :**
+- newly added
+    1. encrypt.html
+    2. decrypt.html

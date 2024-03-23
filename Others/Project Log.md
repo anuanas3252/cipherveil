@@ -173,5 +173,170 @@ I submitted three project ideas to the guide for approval, and the guide approve
 
 ## 📅 23 MAR 2024
 
+- created an app named 'cryptoapp' in the project
+
 - created a new model named 'contactbook' and 'OpenID'
+- created a directory 'templates/contactapp'
+
+- created a directory 'templates/cryptoapp'
+- created python file 'crypto_code.py' doing cryptography
+
+- created urls.py in cryptoapp and contactapp
+
+<br>
+
+**Changes made in settings.py file :**
+    
+- added 'cryptoapp' to installed app section
+
+<br><br>
+
+**templates in contactapp :**
+- newly added
+    1. view_contact.html
+    2. add_contact.html
+    3. delete_contact.html
+    4. edit_contact.html
+
+<br>
+
+**Changes made in contactapp's views.py file :**
+- newly added functions
+    1. view_contact
+    2. add_contact
+    3. delete_contact
+    4. edit_contact
+<br>
+
+**Changes made in contactapp's urls.py file :**
+- newly added urls for below functions
+    1. view_contact
+    2. add_contact
+    3. delete_contact
+    4. edit_contact
+
+<br>
+<br>
+
+**Changes made in cipherveil's urls.py file :**
+- newly added urls for 
+    1. contactapp
+
+<br>
+<br>
+
+**Changes made in steganoapp's views.py file :**
+- newly added functions
+    1. steganoencode
+    2. steganodecode
+    3. download_image_view
+    
+<br>
+
+
+- removed below functions
+    1. download_image_view
+    2. encrypt
+    3. decrypt
+
+<br>
+
+**templates in steganoapp :**
+- newly added
+    1. steganoencode.html
+    2. steganodecode.html
+
+- removed 
+    1. decrypt.html
+    2. encrypt.html
+    
+<br>
+
+**Changes made in steganoapp's urls.py file :**
+- newly added urls for 
+    1. steganoencode
+    2. steganodecode
+    3. download_image_view
+
+- old urls have removed
+
+
+<br>
+<br>
+
+**templates in cryptoapp :**
+- newly added
+    1. decryptionkeygenerate.html
+    2. encryptionkeygenerate.html
+    3. messagedecrypt.html
+    4. messageencrypt.html
+
+<br>
+
+**python code in crypto_code.py :**
+
+- newly added code
+    1. encrypt
+    2. decrypt
+    3. derive_key
+
+<br>
+
+**Changes made in cryptoapp's views.py file :**
+- newly added functions
+    1. messageencrypt
+    2. encryptionkeygenerate
+    3. decryptionkeygenerate
+    4. messagedecrypt
+
+<br>
+
+**Changes made in cryptoapp's urls.py file :**
+- newly added urls for below functions
+    1. messageencrypt
+    2. encryptionkeygenerate
+    3. decryptionkeygenerate
+    4. messagedecrypt
+
+<br>
+
+**Changes made in cipherveil's urls.py file :**
+- newly added urls for 
+    1. cryptoapp
+
+<br>
+<br>
+
+
+- added the code to extend the HTML files to base.html
+
+<br>
+<br>
+
+- added the code for restricting the unauthorised users
+
+<br>
+<br>
+
+- Added the code enabling the functionality to view 404 error
+    
+<br>
+<br>
+
+**Changes made in cipherveil's urls.py file :**
+- newly added urls for 
+    1. handler404
+
+<br>
+
+**Changes made in cipherveil's views.py file :**
+- custom_404
+    
+<br>
+
+**templates in frontlineapp :**
+- newly added
+
+    1. 404.html
+
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact List</title>
+</head>
+<body>
+    <h2>Contact List</h2>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tag</th>
+                <th>Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact.tag }}</td>
+                    <td>{{ contact.name }}</td>
+                    <td><a href="{% url 'edit_contact' contact.id %}">Edit</a></td>
+                    <td><a href="{% url 'delete_contact' contact.id %}">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

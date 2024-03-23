@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('frontlineapp.urls')),
     path('steganograpghy/', include('steganoapp.urls')),
     path('contact/', include('contactapp.urls')),
+    path('cryptography/', include('cryptoapp.urls')),
 ]

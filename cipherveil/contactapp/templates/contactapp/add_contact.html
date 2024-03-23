@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Contact</title>
-</head>
-<body>
+{% extends "frontlineapp/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
     <h2>Add Contact</h2>
     <form method="post" action="{% url 'add_contact' %}">
         {% csrf_token %}
@@ -20,5 +17,6 @@
     {% if error_message %}
     <p>{{ error_message }}</p>
     {% endif%}
-</body>
-</html>
+
+
+    {% endblock content %}

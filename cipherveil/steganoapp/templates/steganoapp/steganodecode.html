@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Steganography Decryption</title>
-</head>
-<body>
+{% extends "frontlineapp/base.html" %}
+{% load static %}
+{% block content %}
+
+
     <h1>Steganography Decryption</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -16,5 +15,7 @@
         <h2>Decoded Text:</h2>
         <p>{{ decoded_text }}</p>
     {% endif %}
-</body>
-</html>
+
+
+
+    {% endblock content %}

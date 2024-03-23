@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact List</title>
-</head>
-<body>
+{% extends "frontlineapp/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
     <h2>Contact List</h2>
     <table border="1px">
         <thead>
@@ -30,5 +27,7 @@
             {% endfor %}
         </tbody>
     </table>
-</body>
-</html>
+
+
+
+    {% endblock content %}

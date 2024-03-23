@@ -1,11 +1,10 @@
 
-<!-- keygenerate.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Key Generation</title>
-</head>
-<body>
+{% extends "frontlineapp/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
     <h2>Select a Tag and Enter Password</h2>
     
     <form method="post" action="{% url 'encryptionkeygenerate' %}">
@@ -34,5 +33,7 @@
             <option value="{{ contact.tag }}">{{ contact.tag }}</option>
         {% endfor %}
     </select> {% endcomment %}
-</body>
-</html>
+
+
+
+    {% endblock content %}

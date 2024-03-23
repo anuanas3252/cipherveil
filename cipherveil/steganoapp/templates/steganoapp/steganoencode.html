@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Steganography Encryption</title>
-</head>
-<body>
+{% extends "frontlineapp/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
     <h1>Steganography Encryption</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -26,5 +26,6 @@
    
     <a href="{% url 'download_image' Encoded_Image_File_Name %}" download">Download Encoded Image</a>
 {% endif %}
-</body>
-</html>
+
+
+{% endblock content %}

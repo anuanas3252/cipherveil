@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Input Form</title>
-</head>
-<body>
+{% extends "frontlineapp/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
     <h2>Enter Your Password</h2>
     
     <form method="post" action="{% url 'decryptionkeygenerate' %}">
@@ -18,5 +16,7 @@
         
         <input type="submit" value="Generate Decryption Key">
     </form>
-</body>
-</html>
+
+
+
+    {% endblock content %}

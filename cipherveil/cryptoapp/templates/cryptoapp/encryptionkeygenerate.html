@@ -1,0 +1,38 @@
+
+<!-- keygenerate.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key Generation</title>
+</head>
+<body>
+    <h2>Select a Tag and Enter Password</h2>
+    
+    <form method="post" action="{% url 'encryptionkeygenerate' %}">
+        {% csrf_token %}
+
+        <label for="tag">Tag:</label>
+        <select name="tag" id="tag" required>
+            {% for contact in contacts %}
+                <option value="{{ contact.tag }}">{{ contact.name }} - {{ contact.tag }}</option>
+            {% endfor %}
+        </select>
+
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+
+        <br>
+
+        <input type="submit" value="Generate Encryption Key">
+    </form>
+
+    {% comment %} <h3>Contact Book Tags:</h3>
+    <select>
+        {% for contact in contacts %}
+            <option value="{{ contact.tag }}">{{ contact.tag }}</option>
+        {% endfor %}
+    </select> {% endcomment %}
+</body>
+</html>

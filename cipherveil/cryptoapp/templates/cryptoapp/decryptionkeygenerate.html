@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Input Form</title>
+</head>
+<body>
+    <h2>Enter Your Password</h2>
+    
+    <form method="post" action="{% url 'decryptionkeygenerate' %}">
+        {% csrf_token %}
+        
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+
+        <br>
+        
+        <input type="submit" value="Generate Decryption Key">
+    </form>
+</body>
+</html>

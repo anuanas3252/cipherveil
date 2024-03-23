@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'frontlineapp',
     'contactapp',
     'steganoapp',
+    'cryptoapp',
 ]
 
 MIDDLEWARE = [

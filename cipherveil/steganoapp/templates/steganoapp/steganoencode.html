@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Steganography Encryption</title>
+</head>
+<body>
+    <h1>Steganography Encryption</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+       
+        <label for="image">Image:</label>
+        <input type="file" name="image" accept="image/*" required>
+        <br>
+        <label for="text">Encoded Image File Name</label>
+        <input type="text" name="Encoded_Image_File_Name" required>
+        <br>
+        <input type="submit" value="Encrypt">
+    </form>
+  
+
+
+   {% if Encoded_Image_File_Name %}
+    <h2>Encoded Image:</h2>
+    <img src="{{ encoded_image_path }}" alt="Encoded Image">
+    <br>
+   
+    <a href="{% url 'download_image' Encoded_Image_File_Name %}" download">Download Encoded Image</a>
+{% endif %}
+</body>
+</html>

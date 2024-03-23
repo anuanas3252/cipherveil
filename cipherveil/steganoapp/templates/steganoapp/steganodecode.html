@@ -1,19 +1,20 @@
-{% extends "frontlineapp/base.html" %}
-{% load static %}
-{% block content %}
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Steganography Decryption</title>
+</head>
+<body>
     <h1>Steganography Decryption</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <label for="image">Encrypted Image:</label>
+        <label for="image">Encoded Image:</label>
         <input type="file" name="image" accept="image/*" required>
         <br>
         <input type="submit" value="Decrypt">
     </form>
-    {% if decrypted_text %}
-        <h2>Decrypted Text:</h2>
-        <p>{{ decrypted_text }}</p>
+    {% if decoded_text %}
+        <h2>Decoded Text:</h2>
+        <p>{{ decoded_text }}</p>
     {% endif %}
-
-
-{% endblock content %}
+</body>
+</html>

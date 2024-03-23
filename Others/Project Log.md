@@ -168,3 +168,10 @@ I submitted three project ideas to the guide for approval, and the guide approve
 - newly added
     1. encrypt.html
     2. decrypt.html
+
+<br>
+
+## 📅 23 MAR 2024
+
+- created a new model named 'contactbook' and 'OpenID'
+

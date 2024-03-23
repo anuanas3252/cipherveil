@@ -19,9 +19,16 @@ from django.urls import path
 
 from frontlineapp import views
 
+from django.conf.urls import handler404
+
+
+
+
 urlpatterns = [
     path("", views.index, name="index"),
     path("signin/", views.signin, name="signin"),
     path("signout/", views.signout, name="signout"),
     path("home/", views.home, name="home"),
 ]
+
+handler404 = 'frontlineapp.views.custom_404'

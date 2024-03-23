@@ -38,3 +38,6 @@ def signout(request):
     # Clear the session and log the user out
     logout(request)
     return redirect('signin')
+
+def custom_404(request, exception):
+    return render(request, 'frontlineapp/404.html', status=404)

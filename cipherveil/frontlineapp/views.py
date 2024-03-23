@@ -7,6 +7,7 @@ def index(request):
     return render(request, 'frontlineapp/index.html', {'page': 'index'})
 
 
+
 def home(request):
     # Check if the user is authenticated
     if request.user.is_authenticated:
@@ -14,6 +15,8 @@ def home(request):
     else:
         # Redirect to the signin page if the user is not authenticated
         return redirect('signin')
+
+
 
 def signin(request):
     if request.method == 'POST':
@@ -28,6 +31,7 @@ def signin(request):
         else:
             messages.error(request, 'Invalid login credentials')
     return render(request, 'frontlineapp/signin.html', {'page': 'signin'})
+
 
 
 def signout(request):

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 
@@ -8,31 +8,41 @@ from django.core.files.storage import default_storage
 from django.shortcuts import get_object_or_404
 from django.conf import settings
 import os
+import base64
+
 # Create your views here.
 
-def encrypt(request):
+def steganoencode(request):
     if request.method == 'POST':
-        text = request.POST.get('text', '')
-        Encrypted_Image_File_Name = request.POST.get('Encrypted_Image_File_Name', '')
+        
+        encrypted_text_str = request.session.get('encrypted_text_str', None)
+        print("5) CIPHERTEXT STR = ",encrypted_text_str,"   END")
+        if encrypted_text_str is None:
+            # Redirect to keygenerate if the key is not available
+            return redirect('encryptionkeygenerate')  # Adjust the URL name as needed
+
+        
+        Encoded_Image_File_Name = request.POST.get('Encoded_Image_File_Name', '')
         image = request.FILES.get('image')
 
         # Open the image
         img = Image.open(image)
 
+        
+        
+        encoded_image = lsb.hide(img, encrypted_text_str)
 
-        encrypted_image = lsb.hide(img, text)
-
-        # Save the encrypted image
-        Encrypted_Image_File_Name = f'{Encrypted_Image_File_Name}.png'
-        encrypted_image_path = f'media/{Encrypted_Image_File_Name}'
-        encrypted_image.save(encrypted_image_path)
+        # Save the encoded image
+        Encoded_Image_File_Name = f'{Encoded_Image_File_Name}.png'
+        encoded_image_path = f'media/{Encoded_Image_File_Name}'
+        encoded_image.save(encoded_image_path)
 
 
        
 
-        return render(request, 'steganoapp/encrypt.html', {'Encrypted_Image_File_Name':Encrypted_Image_File_Name})
+        return render(request, 'steganoapp/steganoencode.html', {'Encoded_Image_File_Name':Encoded_Image_File_Name})
 
-    return render(request, 'steganoapp/encrypt.html')
+    return render(request, 'steganoapp/steganoencode.html')
 
 
 def download_image_view(request, image_name):
@@ -50,21 +60,25 @@ def download_image_view(request, image_name):
     
     
 
-def decrypt(request):
+def steganodecode(request):
     if request.method == 'POST':
         image = request.FILES.get('image')
 
-        # Open the encrypted image
-        encrypted_img = Image.open(image)
+        # Open the encoded image
+        encoded_img = Image.open(image)
 
         # Retrieve the hidden binary text using LSB
-        # binary_text = retrieve_text(encrypted_img)
+        # binary_text = retrieve_text(encoded_img)
 
         # Convert binary text to ASCII
         # text = ''.join(chr(int(binary_text[i:i + 8], 2)) for i in range(0, len(binary_text), 8))
 
-        decrypted_data = lsb.reveal(encrypted_img)
-
-        return render(request, 'steganoapp/decrypt.html', {'decrypted_text': decrypted_data})
-
-    return render(request, 'steganoapp/decrypt.html')
+        decoded_data = lsb.reveal(encoded_img)
+        print("Decoded text = encrypted_text_str @ steganodecode =",decoded_data)
+        request.session['decryption_text_str'] = decoded_data
+        
+        print("6)) CIPHERTEXT STR = ",decoded_data,"   END")
+        
+        #return render(request, 'steganoapp/steganodecode.html', {'decoded_text': decoded_data})
+        return redirect('decryptionkeygenerate')
+    return render(request, 'steganoapp/steganodecode.html')

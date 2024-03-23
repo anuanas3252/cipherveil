@@ -29,6 +29,7 @@ def signin(request):
             messages.error(request, 'Invalid login credentials')
     return render(request, 'frontlineapp/signin.html', {'page': 'signin'})
 
+
 def signout(request):
     # Clear the session and log the user out
     logout(request)

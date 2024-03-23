@@ -52,3 +52,6 @@ used to encrypt and decrypt an image
 
 ## pillow 10.2.0
 used to handle images
+
+## cryptography==42.0.5
+used for encrypting and decrypting messages.

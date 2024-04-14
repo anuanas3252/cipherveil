@@ -29,6 +29,8 @@ urlpatterns = [
     path("signin/", views.signin, name="signin"),
     path("signout/", views.signout, name="signout"),
     path("home/", views.home, name="home"),
+    path("about/", views.about, name="about"),
+    path("faq/", views.faq, name="faq"),
 ]
 
 handler404 = 'frontlineapp.views.custom_404'

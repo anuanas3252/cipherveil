@@ -10,6 +10,8 @@ from django.conf import settings
 import os
 import base64
 
+from django.contrib import messages
+
 # Create your views here.
 
 def steganoencode(request):

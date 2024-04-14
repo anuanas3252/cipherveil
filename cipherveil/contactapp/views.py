@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import ContactBook
 
+from django.contrib import messages
+
 # Create your views here.
 def add_contact(request):
     

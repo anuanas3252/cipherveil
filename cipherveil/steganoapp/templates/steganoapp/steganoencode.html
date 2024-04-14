@@ -3,8 +3,19 @@
 {% block content %}
 
 
+<h1 class="display-1 text-center">IMAGE ENCODE</h1>
+    
+    <br>
 
-    <h1>Steganography Encryption</h1>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <div class="alert alert-dark text-center" role="alert">
+                    <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                </div>    
+            {% endfor %}
+        </ul>
+    {% endif %}
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
        

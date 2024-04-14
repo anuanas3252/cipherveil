@@ -3,8 +3,17 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 # Create your views here.
 
+from django.contrib import messages
+
+
 def index(request):
     return render(request, 'frontlineapp/index.html', {'page': 'index'})
+
+def about(request):
+    return render(request, 'frontlineapp/about.html', {'page': 'about'})
+
+def faq(request):
+    return render(request, 'frontlineapp/faq.html', {'page': 'faq'})
 
 
 

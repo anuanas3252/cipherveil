@@ -16,18 +16,22 @@
         </ul>
     {% endif %}
 
-    <h2>Enter Your Message</h2>
+    <div class="col-md-6 offset-md-3">
     
-    <form method="post" action="{% url 'messageencrypt' %}">
-        {% csrf_token %}
-        
-        <label for="text">Message:</label>
-        <textarea id="text" name="text" rows="4" cols="50" required></textarea>
-        
-        <br>
-        
-        <input type="submit" value="Encrypt Message">
-    </form>
+        <form method="post" action="{% url 'messageencrypt' %}">
+            {% csrf_token %}
+            
+            <label for="text" class="form-label">Message:</label>
+            <textarea id="text"  class="form-control text-center" name="text" rows="4" cols="50" required></textarea>
+            
+            <br>
+            
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-dark w-50 py-2">ENCRYPT MESSAGE</button>
+            </div>
+        </form>
+    
+    </div>
 
 
 

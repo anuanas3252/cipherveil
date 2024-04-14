@@ -38,12 +38,13 @@ def steganoencode(request):
             # Save the encoded image
             Encoded_Image_File_Name = f'{Encoded_Image_File_Name}.png'
             encoded_image_path = f'media/{Encoded_Image_File_Name}'
+            encoded_image_path2=f'/{encoded_image_path}'
             encoded_image.save(encoded_image_path)
 
 
         
 
-            return render(request, 'steganoapp/steganoencode.html', {'Encoded_Image_File_Name':Encoded_Image_File_Name})
+            return render(request, 'steganoapp/steganoencode.html', {'Encoded_Image_File_Name':Encoded_Image_File_Name,'encoded_image_path2':encoded_image_path2})
 
         return render(request, 'steganoapp/steganoencode.html')
     

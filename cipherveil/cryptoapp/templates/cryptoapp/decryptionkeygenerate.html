@@ -16,19 +16,20 @@
         </ul>
     {% endif %}
 
-    <h6>Enter Your Password</h6>
+    <div class="col-md-6 offset-md-3">
     
-    <form method="post" action="{% url 'decryptionkeygenerate' %}">
-        {% csrf_token %}
-        
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
+        <form method="post" action="{% url 'decryptionkeygenerate' %}">
+            {% csrf_token %}
+            
+            <label for="password" class="form-label" >Password:</label>
+            <input type="password" name="password" class="form-control text-center" id="password" required>
 
-        <br>
-        
-        <input type="submit" value="Generate Decryption Key">
-    </form>
+            <br>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-dark w-50 py-2">DECRYPT MESSAGE</button>
+            </div>
+        </form>
 
-
+    </div>
 
     {% endblock content %}

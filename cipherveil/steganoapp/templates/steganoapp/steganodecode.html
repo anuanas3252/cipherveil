@@ -17,19 +17,23 @@
         </ul>
     {% endif %}
 
+    <div class="col-md-6 offset-md-3">
 
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label for="image">Encoded Image:</label>
-        <input type="file" name="image" accept="image/*" required>
-        <br>
-        <input type="submit" value="Decrypt">
-    </form>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="image" class="form-label" >Encoded Image:</label>
+            <input type="file" class="form-control text-center" name="image" accept="image/*" required>
+            <br>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-dark w-50 py-2">DECODE IMAGE</button>
+            </div>
+        </form>
+
     {% if decoded_text %}
         <h2>Decoded Text:</h2>
         <p>{{ decoded_text }}</p>
     {% endif %}
 
-
+    </div>
 
     {% endblock content %}

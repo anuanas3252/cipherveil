@@ -17,27 +17,30 @@
         </ul>
     {% endif %}
 
-    <h6>Select a Tag and Enter Password</h6>
+    <div class="col-md-6 offset-md-3">
     
-    <form method="post" action="{% url 'encryptionkeygenerate' %}">
-        {% csrf_token %}
+        <form method="post" action="{% url 'encryptionkeygenerate' %}">
+            {% csrf_token %}
 
-        <label for="tag">Tag:</label>
-        <select name="tag" id="tag" required>
-            {% for contact in contacts %}
-                <option value="{{ contact.tag }}">{{ contact.name }} - {{ contact.tag }}</option>
-            {% endfor %}
-        </select>
+            <label for="tag" class="form-label">TAG ID:</label>
+            <select name="tag" id="tag" required class="form-select" aria-label="Default select example">
+                {% for contact in contacts %}
+                    <option value="{{ contact.tag }}">{{ contact.name }} - {{ contact.tag }}</option>
+                {% endfor %}
+            </select>
 
-        <br>
+            <br>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control text-center"  name="password" id="password" required>
 
-        <br>
+            <br>
 
-        <input type="submit" value="Generate Encryption Key">
-    </form>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-dark w-50 py-2">GENERATE ENCRYPTION KEY</button>
+            </div>
+        </form>
+    </div>
 
     {% comment %} <h3>Contact Book Tags:</h3>
     <select>

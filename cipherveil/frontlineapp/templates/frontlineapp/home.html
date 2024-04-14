@@ -16,6 +16,60 @@
         </ul>
     {% endif %}
 
-<h1>HOME Page</h1>
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-3 g-3">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="/static/frontlineapp/encrypt.jpeg" width="100%" height="300" class="card-img-top" alt="stegdecrypt">
+                    <div class="card-body">
+                        <h6 class="text-center ">ENCRYPTOSTEG</h6>
+                        <p class="card-text">The message is first encrypted using symmetric encryption, and then the resulting cipher text is encoded into an image using steganography</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'encryptionkeygenerate' %}" class="btn btn-sm btn-outline-secondary">CLICK HERE</a>
+                            </div>
+                  {% comment %} <small class="text-body-secondary">9 mins</small> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="/static/frontlineapp/decrypt.jpeg" width="100%" height="300" class="card-img-top" alt="stegdecrypt">
+                    <div class="card-body">
+                        <h6 class="text-center ">STEGDECRYPT</h6>
+                        <p class="card-text">The image undergoes steganography decoding, and subsequently, the cipher text is decrypted using symmetric decryption.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'steganodecode' %}" class="btn btn-sm btn-outline-secondary">CLICK HERE</a>
+                    
+                            </div>
+                  {% comment %} <small class="text-body-secondary">9 mins</small> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="/static/frontlineapp/encrypt.jpeg" width="100%" height="300" class="card-img-top" alt="stegdecrypt">
+                    <div class="card-body">
+                        <h6 class="text-center ">CONTACTS</h6>
+                        <p class="card-text">Names and TAG IDs</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'view_contact' %}" class="btn btn-sm btn-outline-secondary">VIEW</a>
+                                <a href="{% url 'add_contact' %}" class="btn btn-sm btn-outline-secondary">ADD</a>
+                            </div>
+                  {% comment %} <small class="text-body-secondary">9 mins</small> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 {% endblock content %}

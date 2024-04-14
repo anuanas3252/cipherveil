@@ -39,20 +39,20 @@
                                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'index' %}">Link</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'index' %}">Link2</a>
-                                </li>
-                                <li class="nav-item">
                                   <a class="nav-link active" aria-current="page" href="{% url 'about' %}">ABOUT</a>
-                              </li>
-                              <li class="nav-item">
+                                </li>
+                                <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{% url 'faq' %}">FAQ</a>
-                            </li>
-                              
-                              
+                                </li>
                             </ul>
+
+                            {% if user.is_authenticated %}
+                                <ul class="nav justify-content-end">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'signout' %}">SIGNOUT</a>
+                                    </li>
+                                </ul>
+                                {% endif %}
                         </div>
                     </div>
                 </nav>

@@ -2,9 +2,11 @@
 {% load static %}
 {% block content %}
 
-<h1 class="display-1 text-center">MESSAGE DECRYPTION</h1>
+<h1 class="display-1 text-center">DECRYPTED MESSAGE</h1>
     
     <br>
+
+    <div class="col-md-6 offset-md-3">
 
     {% if messages %}
         <ul class="messages">
@@ -16,10 +18,19 @@
         </ul>
     {% endif %}
 
-    <h2> Your Message</h2>
+    
     {% if decrypted_message %}
-        {{decrypted_message}}
+        
+        <div class="card justify-content-center" style="width: 18rem;">
+            <img src="/static/cryptoapp/decryptedmessage.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6 class="text-center ">MESSAGE</h6>
+                <p class="card-text">{{decrypted_message}}</p>
+            </div>
+          </div>
     {% endif %}
+
+    </div>
 
 
 

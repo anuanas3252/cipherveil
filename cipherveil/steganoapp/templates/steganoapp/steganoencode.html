@@ -16,27 +16,39 @@
             {% endfor %}
         </ul>
     {% endif %}
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-       
-        <label for="image">Image:</label>
-        <input type="file" name="image" accept="image/*" required>
+    
+    <div class="col-md-6 offset-md-3">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        
+            <label for="image" class="form-label">Image:</label>
+            <input type="file" class="form-control text-center" name="image" accept="image/*" required>
+            <br>
+            <label for="text" class="form-label" >Encoded Image File Name</label>
+            <input type="text" class="form-control text-center" name="Encoded_Image_File_Name" required>
+            <br>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-dark w-50 py-2">ENCODE MESSAGE</button>
+            </div>
+        </form>
+
         <br>
-        <label for="text">Encoded Image File Name</label>
-        <input type="text" name="Encoded_Image_File_Name" required>
-        <br>
-        <input type="submit" value="Encrypt">
-    </form>
+
+        {% if encoded_image_path2 %}
+            
+            <div class="card" style="width: 18rem;">
+                <img src="{{ encoded_image_path2 }}" height="300" width="300" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Encoded Image</h5>
+                <p class="card-text">You can download the image and send to the person on whose TAG ID the key generated</p>
+                <a href="{% url 'download_image' Encoded_Image_File_Name %}" download  class="btn btn-dark">Download Image</a>
+                </div>
+            </div>
+
+            {% endif %}
+    </div>
   
 
-
-   {% if Encoded_Image_File_Name %}
-    <h2>Encoded Image:</h2>
-    <img src="{{ encoded_image_path }}" alt="Encoded Image">
-    <br>
-   
-    <a href="{% url 'download_image' Encoded_Image_File_Name %}" download">Download Encoded Image</a>
-{% endif %}
 
 
 {% endblock content %}

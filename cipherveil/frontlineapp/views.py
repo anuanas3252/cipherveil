@@ -12,8 +12,7 @@ def index(request):
 def about(request):
     return render(request, 'frontlineapp/about.html', {'page': 'about'})
 
-def faq(request):
-    return render(request, 'frontlineapp/faq.html', {'page': 'faq'})
+
 
 
 
